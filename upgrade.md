@@ -17,18 +17,18 @@ nvm alias default 18
 ## refresh the cash
 
 ```sh
-sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
-sudo n latest
-sudo bench setup requirements --node
-sudo bench build
+npm cache clean -f
+npm install -g n
+n stable
+n latest
+bench setup requirements --node
+bench build
 ```
 
 ## upgrade
 
 ```sh
-bench switch-to-branch version-15 frappe erpnext --upgrade
+bench switch-to-branch version-15 frappe erpnext hrms --upgrade
 ```
 
 ## migrate
@@ -70,6 +70,15 @@ sudo supervisorctl restart all
 
 ```sh
 bench version
+```
+
+# fix hrms issue
+
+```sh
+bench remove-app hrms
+bench uninstall-app hrms
+bench get-app https://github.com/frappe/hrms.git --branch version-15
+bench install-app hrms
 ```
 
 ## Notes
